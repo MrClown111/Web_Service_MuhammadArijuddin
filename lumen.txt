@@ -1,0 +1,92 @@
+<?php
+/** @var \Laravel\Lumen\Routing\Router $router */
+
+// Users
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/users', 'UserController@index');           // Get all users
+    $router->post('/users', 'UserController@store');          // Create a new user
+    $router->get('/users/{id}', 'UserController@show');       // Get a specific user by ID
+    $router->put('/users/{id}', 'UserController@update');     // Update a user
+    $router->delete('/users/{id}', 'UserController@destroy'); // Delete a user
+});
+
+// Consoles
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/consoles', 'ConsoleController@index');
+    $router->post('/consoles', 'ConsoleController@store');
+    $router->get('/consoles/{id}', 'ConsoleController@show');
+    $router->put('/consoles/{id}', 'ConsoleController@update');
+    $router->delete('/consoles/{id}', 'ConsoleController@destroy');
+});
+
+// Games
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/games', 'GameController@index');
+    $router->post('/games', 'GameController@store');
+    $router->get('/games/{id}', 'GameController@show');
+    $router->put('/games/{id}', 'GameController@update');
+    $router->delete('/games/{id}', 'GameController@destroy');
+});
+
+// Rentals
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/rentals', 'RentalController@index');
+    $router->post('/rentals', 'RentalController@store');
+    $router->get('/rentals/{id}', 'RentalController@show');
+    $router->put('/rentals/{id}', 'RentalController@update');
+    $router->delete('/rentals/{id}', 'RentalController@destroy');
+});
+
+// Rental Details
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/rental-details', 'RentalDetailController@index');
+    $router->post('/rental-details', 'RentalDetailController@store');
+    $router->get('/rental-details/{id}', 'RentalDetailController@show');
+    $router->put('/rental-details/{id}', 'RentalDetailController@update');
+    $router->delete('/rental-details/{id}', 'RentalDetailController@destroy');
+});
+
+// Payments
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/payments', 'PaymentController@index');
+    $router->post('/payments', 'PaymentController@store');
+    $router->get('/payments/{id}', 'PaymentController@show');
+    $router->put('/payments/{id}', 'PaymentController@update');
+    $router->delete('/payments/{id}', 'PaymentController@destroy');
+});
+
+// Return Transactions
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/returns', 'ReturnTransactionController@index');
+    $router->post('/returns', 'ReturnTransactionController@store');
+    $router->get('/returns/{id}', 'ReturnTransactionController@show');
+    $router->put('/returns/{id}', 'ReturnTransactionController@update');
+    $router->delete('/returns/{id}', 'ReturnTransactionController@destroy');
+});
+
+// Categories
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/categories', 'CategoryController@index');
+    $router->post('/categories', 'CategoryController@store');
+    $router->get('/categories/{id}', 'CategoryController@show');
+    $router->put('/categories/{id}', 'CategoryController@update');
+    $router->delete('/categories/{id}', 'CategoryController@destroy');
+});
+
+// Reviews
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/reviews', 'ReviewController@index');
+    $router->post('/reviews', 'ReviewController@store');
+    $router->get('/reviews/{id}', 'ReviewController@show');
+    $router->put('/reviews/{id}', 'ReviewController@update');
+    $router->delete('/reviews/{id}', 'ReviewController@destroy');
+});
+
+// Settings
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/settings', 'SettingController@index');
+    $router->post('/settings', 'SettingController@store');
+    $router->get('/settings/{id}', 'SettingController@show');
+    $router->put('/settings/{id}', 'SettingController@update');
+    $router->delete('/settings/{id}', 'SettingController@destroy');
+});
